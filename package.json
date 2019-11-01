@@ -1,0 +1,34 @@
+{
+  "name": "miniprogram-automator_extension",
+  "version": "0.0.1",
+  "description": "",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "test": "jest -c ./jest.config.js"
+  },
+  "keywords": [
+    "wechat automation",
+    "wechat automator",
+    "miniprogram automator"
+  ],
+  "author": "Naren Chejara <n.chejara@yahoo.com>",
+  "license": "MIT",
+  "repository": {
+      "type": "git",
+      "url": "git+https://github.com/nchejara/miniprogram-automator-extension.git"
+  },
+  "bugs": {
+      "url": "https://github.com/nchejara/miniprogram-automator-extension/issues"
+  },
+  "homepage": "https://github.com/nchejara/miniprogram-automator-extension#readme",
+  
+  "dependencies": {
+    "miniprogram-automator": "0.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "12.12.3",
+    "@types/ws": "6.0.3",
+    "typescript": "3.6.4"
+  }
+}
