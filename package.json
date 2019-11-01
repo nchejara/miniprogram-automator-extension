@@ -1,7 +1,7 @@
 {
-  "name": "miniprogram-automator_extension",
-  "version": "0.0.1",
-  "description": "",
+  "name": "miniprogram-automator-extension",
+  "version": "0.0.2",
+  "description": "An extension library of wechat miniprogram-automator modules",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
@@ -15,14 +15,13 @@
   "author": "Naren Chejara <n.chejara@yahoo.com>",
   "license": "MIT",
   "repository": {
-      "type": "git",
-      "url": "git+https://github.com/nchejara/miniprogram-automator-extension.git"
+    "type": "git",
+    "url": "git+https://github.com/nchejara/miniprogram-automator-extension.git"
   },
   "bugs": {
-      "url": "https://github.com/nchejara/miniprogram-automator-extension/issues"
+    "url": "https://github.com/nchejara/miniprogram-automator-extension/issues"
   },
   "homepage": "https://github.com/nchejara/miniprogram-automator-extension#readme",
-  
   "dependencies": {
     "miniprogram-automator": "0.6.0"
   },
