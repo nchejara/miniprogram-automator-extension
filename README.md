@@ -1,14 +1,14 @@
-# **WeChat Miniprogram Automator Extension**
+# **WeChat Mini program Automator Extension**
 
-Miniprogram Automator extension package is an extension version of the miniprogram-automator package which developed by the WeChat miniprogram team. The miniprogram automator extension is a new approach to find and perform an action on the element. I want to simplified the functionalities so it may help the user write effortless end 2 end test scenarios. 
+Miniprogram Automator extension package is an extended version of the [miniprogram-automator](https://www.npmjs.com/package/miniprogram-automator) package developed by the WeChat mini-program team. The Mini-Program Automator extension is a new approach to find and perform an action on the element. I want to simplify the functionalities so it may help the user write effortless end 2 end test scenarios.
+ 
 
+The following functions are exposed on the page level (ExtendedPage) so the user can directly trigger actions on the page without calling *page.$('.selector')*. 
 
-The following funtion are exposed on the page level (ExtendedPage) so the user can directly trigger actions on the page without calling *page.$('.selector')*. 
-
-- **tap**: Tap on the elem,ent
+- **tap**: Tap on the element
 - **text**: Get the text of the element
 - **wxml**: Get this inner xml(html)
-- **outerWxml**: Get outer cml(html)
+- **outerWxml**: Get outer xml(html)
 - **attribute**: Get the attribute value of the element
 - **trigger**: Trigger the element event such as focus, change
 - **type**: Type in the input element, newly added
@@ -28,19 +28,27 @@ The following funtion are exposed on the page level (ExtendedPage) so the user c
  
  *You can refer *.d.ts files for more details**
 
-## **How does it works**
-**Miniprogram Automator Extenstion** library working pattern is slight different than **Miniprogram Automator**. Let's undertand this by tapping on the button element
+## **How does it work**
+**Miniprogram Automator Extenstion** library working pattern is slightly different from **Miniprogram Automator**. Let's understand this by tapping on the button element
 
 
 ### **Miniprogram-automator**
-Find the element by calling **page.$('.selector')** and then trigger action of that element.  
+Find the element by calling **page.$('.selector')** and then trigger the action of that element.  
 
-This is a good approch if you trigger multiple action on the element
+This is a good approach if you trigger multiple actions on the element
 
 ```
-    page = await miniProgram.navigateTo('Home');
-    const btnElement = await page.$('.btn_element");
-    await btnElement.tap();
+    const automator = require("miniprogram-automator-extension");
+    
+    (async () => {
+        const miniApp = await automator.launch({cliPath: 'path/to/cli', projectPath: 'path/to/project);
+        const page = await miniApp.navigateTo('Home');
+        
+        const btnElement = await page.$('.btn_element");
+        await btnElement.tap();
+
+        await miniApp.close();
+    })();
 ```
 
 ### **Miniprogram-automator-extension**
@@ -51,7 +59,22 @@ The element selector can be passed directly in the action function. The function
 This approch is useful when you want to trigger a single action on the element.
 
 ```
-    const page = await miniProgram.navigateTo('Home');
-    await page.tap('.btn_element); 
+    const automator = require("miniprogram-automator-extension");
+    const ExtendedPage = require("miniprogram-automator-extension");
+
+    (async () => {
+        const miniApp = await automator.launch({cliPath: 'path/to/cli', projectPath: 'path/to/project);
+        const extendedPage = new ExtendedPage(await miniApp.navigateTo('Home'));
+        
+        await extendedPage.tap('.btn_element); 
+
+        await miniApp.close();
+    })();
 ```
 
+### **Installation**
+```
+    $ npm i miniprogram-automator-extension
+```
+
+*Note: This module is in under progress, therefore stay tune for new update
